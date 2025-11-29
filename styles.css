@@ -1,0 +1,200 @@
+/* 基本重置 */
+/* 修改 body 样式 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+}
+
+h1 {
+    color: #e10600; /* F1 红色 */
+    margin-bottom: 20px;
+/* 修改 container 样式，让它更像一个显示屏 */
+.container {
+    background-color: rgba(255, 255, 255, 0.05); /* 半透明的深色背景 */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* 增加阴影深度 */
+    width: 90%;
+    max-width: 600px;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* 增加细微边框 */
+}
+
+}
+
+/* 游戏区域布局 */
+.game-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/* 按钮样式 */
+#startButton {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #e10600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 30px;
+}
+
+#startButton:hover {
+    background-color: #b80500;
+}
+
+/* 赛车布局（使用Flexbox模拟四个角） */
+.car {
+    display: grid;
+    grid-template-areas: 
+        "fl fr"
+        "rl rr";
+    gap: 15px;
+    width: 300px; /* 控制赛车区域大小 */
+    height: 180px;
+    margin: 20px auto;
+    border: 3px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #eee;
+}
+
+#wheel-FL { grid-area: fl; }
+#wheel-FR { grid-area: fr; }
+#wheel-RL { grid-area: rl; }
+#wheel-RR { grid-area: rr; }
+
+/* 轮胎槽样式 */
+.wheel-slot {
+    background-color: #444;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* 变成圆形 */
+    cursor: pointer;
+    font-size: 0.9em;
+    user-select: none; /* 防止文本被选中 */
+    transition: background-color 0.1s, transform 0.1s;
+}
+
+/* 准备操作的轮胎样式 (关键样式) */
+.wheel-active {
+    background-color: #00ff00; /* 绿色表示可以点击 */
+    color: black;
+    box-shadow: 0 0 15px #00ff00;
+    font-weight: bold;
+}
+
+.wheel-slot:not(.wheel-active) {
+    pointer-events: none; /* 禁用未激活轮胎的点击 */
+    opacity: 0.5;
+}
+
+.result {
+    font-size: 1.8em;
+    color: #28a745;
+    margin-top: 20px;
+    font-weight: bold;
+}
+/* 状态信息：使用浅灰色 */
+.status-message {
+    font-size: 1.2em;
+    color: #aaa; /* 浅灰色 */
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* 计时器：醒目的蓝色或绿色 */
+.timer {
+    font-size: 2.2em; /* 增大字体 */
+    color: #00ff00; /* 亮绿色，模拟赛车显示屏 */
+    margin-bottom: 25px;
+    font-weight: bold;
+    /* 增加一个科技感边框 */
+    border: 2px solid #00ff00;
+    padding: 5px 15px;
+    border-radius: 5px;
+    background-color: rgba(0, 255, 0, 0.05);
+}
+
+/* 按钮样式：保持 F1 红 */
+#startButton {
+    padding: 12px 25px; /* 增大按钮 */
+    font-size: 1.3em;
+    background-color: #e10600;
+    color: white;
+    border: 2px solid #e10600; /* 增加边框 */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: 0 4px #b80500; /* 3D 效果阴影 */
+}
+
+#startButton:active {
+    box-shadow: 0 1px #b80500;
+    transform: translateY(3px); /* 按下效果 */
+}
+/* 赛车布局：拉长比例，模拟 F1 形状 */
+.car {
+    /* 调整尺寸和网格间距 */
+    display: grid;
+    grid-template-areas: 
+        "fl fr"
+        "rl rr";
+    gap: 70px 15px; /* 垂直间距更大，水平间距小 */
+    width: 380px; /* 稍微拉宽 */
+    height: 250px; /* 稍微拉长 */
+    margin: 20px auto;
+    border: 2px dashed #666; /* 虚线框模拟站位 */
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* 轮胎槽样式 */
+.wheel-slot {
+    width: 80px; /* 增加尺寸 */
+    height: 80px;
+    background-color: #222; /* 更深的黑色 */
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; 
+    cursor: pointer;
+    font-size: 1em;
+    border: 5px solid #000; /* 轮胎边缘 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    transition: background-color 0.1s, transform 0.1s, box-shadow 0.2s;
+}
+
+/* 激活状态：使用 F1 轮胎颜色（如软胎的红色或超亮的绿色） */
+.wheel-active {
+    background-color: #ff0000; /* 亮红色，模拟软胎 */
+    color: white;
+    box-shadow: 0 0 25px #ff0000; /* 强烈的红色光晕 */
+    font-weight: bold;
+    transform: scale(1.05); /* 放大一点，吸引注意力 */
+    border-color: #fff;
+}
